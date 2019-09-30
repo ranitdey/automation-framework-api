@@ -17,3 +17,17 @@ def build_resource_endpoint(base_url, path, resource=None):
     else:
         return base_url + path + "/" + resource
 
+
+def get_basic_headers():
+    return {
+        "Accept": "application/json",
+        "Content - Type": "application/json"
+    }
+
+
+def create_services_payload(service):
+    return {
+        "name": service
+    }
+
+

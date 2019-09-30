@@ -26,8 +26,7 @@ def patch(url, request_json, headers={}):
     return requests.patch(url, json=request_json, headers=headers)
 
 
-def delete(url, request_json, headers={}):
+def delete(url, headers={}):
     preporter.info("Delete URL: " + url)
-    preporter.info("Request JSON: " + json.dumps(request_json))
     return requests.delete(url, headers=headers)
 
