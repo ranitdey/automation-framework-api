@@ -9,7 +9,7 @@ An automation framework for API's capable of automating scenarios related to use
 * BestBuy API playground (For mocking dummy API's. To setup this API follow this link:- https://github.com/BestBuy/api-playground)
 * Virtualenv (If your system do not have virtualenv please set it up using the following command)
 ```bash
-pip install virtualenv
+    pip install virtualenv
 ```
 
 
@@ -20,38 +20,48 @@ steps :-
 
 * Clone this repository and go to the root directory.
 
-
+```bash
     git clone https://github.com/ranit-geek/automation-framework-api.git
     
     cd automation-framework-api/
+```
+
     
 * Create and activate virtual environment using python3.
 
-
+```bash
     virtualenv -p python3 venv
     
     source venv/bin/activate
+```
+
     
     
 * Install requirements from requirements.txt  
 
-
+```bash
     pip install -r requirements.txt
+```
+
 
 
 * Run the automated tests   
 
-
+```bash
     ptest3 -t tests
+```
+
 
 
 
 * To see test result report check the HTML report path generated after test run in the terminal and append `/index.html` and then open it in browser
 .For example it looks like this in my system :  
 
-
+```bash
     /Users/ranit/documentation/automation-framework-api/test-output/html-report/index.html
-    
+   
+```
+     
 
 
 ## Test cases automated
