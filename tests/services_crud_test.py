@@ -45,10 +45,16 @@ class ServicesCURDTest:
         assert_equals(response_json["id"], self.testcase_data[data.SINGLE_USER_WORKFLOW_SERVICES[0]])
         assert_equals(response_json["name"], "updated service name", "Updated name did't match")
 
+        # Performing a get call to check if the resource got updated properly
+        get_response = http_util.get(url, headers=common_utils.get_basic_headers())
+        get_response_json = get_response.json()
+        assert_equals(get_response_json["id"], self.testcase_data[data.SINGLE_USER_WORKFLOW_SERVICES[0]])
+        assert_equals(get_response_json["name"], "updated service name", "Updated name did't match")
+
         # updating the data back to original to maintain state
         payload = common_utils.create_services_payload(data.SINGLE_USER_WORKFLOW_SERVICES[0])
-        get_response = http_util.patch(url, request_json=payload, headers=common_utils.get_basic_headers())
-        self.testcase_data[get_response.json()["name"]] = response_json["id"]
+        update_response = http_util.patch(url, request_json=payload, headers=common_utils.get_basic_headers())
+        self.testcase_data[update_response.json()["name"]] = response_json["id"]
 
 
     @Test()
